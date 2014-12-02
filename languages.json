@@ -1,0 +1,220 @@
+{
+"result": [
+{
+"introduced": "2008", 
+"name": "Arc", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/ru_id/2247840"
+}, 
+{
+"introduced": "2008", 
+"name": "PCASTL", 
+"type": "/computer/programming_language", 
+"id": "/en/pcastl"
+}, 
+{
+"introduced": "2008", 
+"name": "Objective-J", 
+"type": "/computer/programming_language", 
+"id": "/en/objective_j"
+}, 
+{
+"introduced": "2008", 
+"name": "DECLAN Pro", 
+"type": "/computer/programming_language", 
+"id": "/en/declan_pro"
+}, 
+{
+"introduced": "2008", 
+"name": "M", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/de_id/3908212"
+}, 
+{
+"introduced": "2008", 
+"name": "Reia", 
+"type": "/computer/programming_language", 
+"id": "/en/reia"
+}, 
+{
+"introduced": "2008-10-01", 
+"name": "Microsoft Small Basic", 
+"type": "/computer/programming_language", 
+"id": "/en/microsoft_small_basic"
+}, 
+{
+"introduced": "2008", 
+"name": "Boomerang", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/en_title/Boomerang_$0028programming_language$0029"
+}, 
+{
+"introduced": "2009", 
+"name": "Ambi", 
+"type": "/computer/programming_language", 
+"id": "/en/ambi"
+}, 
+{
+"introduced": "2009", 
+"name": "Axum", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/en_title/Axum_$0028programming_language$0029"
+}, 
+{
+"introduced": "2009-11-10", 
+"name": "Go", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/ru/Go_$0028$044F$0437$044B$043A_$043F$0440$043E$0433$0440$0430$043C$043C$0438$0440$043E$0432$0430$043D$0438$044F$0029"
+}, 
+{
+"introduced": "2008", 
+"name": "Genie", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/es/Genie_$0028lenguaje_de_programaci$00F3n$0029"
+}, 
+{
+"introduced": "2008", 
+"name": "Objeck", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/en_title/Objeck_$0028programming_language$0029"
+}, 
+{
+"introduced": "2012", 
+"name": "Rust", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/en_title/Rust_$0028programming_language$0029"
+}, 
+{
+"introduced": "2010", 
+"name": "Fancy", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/en_title/Fancy_$0028programming_language$0029"
+}, 
+{
+"introduced": "2011", 
+"name": "Alpoca", 
+"type": "/computer/programming_language", 
+"id": "/m/0gh50t7"
+}, 
+{
+"introduced": "2009", 
+"name": "Less", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/ru/Less_$0028$044F$0437$044B$043A_$0441$0442$0438$043B$0435$0439$0029"
+}, 
+{
+"introduced": "2011", 
+"name": "Opa", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/en_title/Opa_$0028programming_language$0029"
+}, 
+{
+"introduced": "2009-12-13", 
+"name": "CoffeeScript", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/en_title/CoffeeScript"
+}, 
+{
+"introduced": "2011-05-16", 
+"name": "MoonScript", 
+"type": "/computer/programming_language", 
+"id": "/m/0hjlb4k"
+}, 
+{
+"introduced": "2012", 
+"name": "Julia", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/en_title/Julia_$0028programming_language$0029"
+}, 
+{
+"introduced": "2009", 
+"name": "ParaSail", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/en_title/ParaSail_$0028programming_language$0029"
+}, 
+{
+"introduced": "2011", 
+"name": "Elixir", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/en_title/Elixir_$0028programming_language$0029"
+}, 
+{
+"introduced": "2010", 
+"name": "Stylus", 
+"type": "/computer/programming_language", 
+"id": "/wikipedia/en_title/Stylus_$0028stylesheet_language$0029"
+}, 
+{
+"introduced": "2009", 
+"name": "X#", 
+"type": "/computer/programming_language", 
+"id": "/m/0s8vc__"
+}, 
+{
+"introduced": "2008", 
+"name": "Nimrod", 
+"type": "/computer/programming_language", 
+"id": "/m/0vpk27_"
+}, 
+{
+"introduced": "2013-04-13", 
+"name": "DAG", 
+"type": "/computer/programming_language", 
+"id": "/m/0vsh31n"
+}, 
+{
+"introduced": "2013", 
+"name": "BAIL", 
+"type": "/computer/programming_language", 
+"id": "/m/0vshxf6"
+}, 
+{
+"introduced": "2012", 
+"name": "Nemo", 
+"type": "/computer/programming_language", 
+"id": "/dataworld/freeq/job_6cf50b0b-5659-4545-bd53-dd269f729755_var_en_wikipedia_org_wiki_Nemo_$0028programming_language$0029"
+}, 
+{
+"introduced": "2012", 
+"name": "Ya", 
+"type": "/computer/programming_language", 
+"id": "/dataworld/freeq/job_da6fe9a6-2c8a-4c8d-a872-f953b895c101_var_en_wikipedia_org_wiki_Ya_$0028programming_language$0029"
+}, 
+{
+"introduced": "2013", 
+"name": "Nock", 
+"type": "/computer/programming_language", 
+"id": "/dataworld/freeq/job_6b792f7c-9c35-48bf-afa6-1e7a2a970ba5_var_en_wikipedia_org_wiki_Nock_$0028programming_language$0029"
+}, 
+{
+"introduced": "2013", 
+"name": "P*", 
+"type": "/computer/programming_language", 
+"id": "/dataworld/freeq/job_57a0acb3-264f-4329-b948-525ab8e14fbc_var_en_wikipedia_org_wiki_P$002A"
+}, 
+{
+"introduced": "2011", 
+"name": "ELI", 
+"type": "/computer/programming_language", 
+"id": "/dataworld/freeq/job_91c5f39d-30ad-46ba-bb20-a3e294e29df8_var_en_wikipedia_org_wiki_ELI_$0028programming_language$0029"
+}, 
+{
+"introduced": "2008", 
+"name": "LFE", 
+"type": "/computer/programming_language", 
+"id": "/dataworld/freeq/job_fc372b70-658e-4162-b332-6858145a4195_var_en_wikipedia_org_wiki_LFE_$0028programming_language$0029"
+}, 
+{
+"introduced": "2011", 
+"name": "LiveScript", 
+"type": "/computer/programming_language", 
+"id": "/dataworld/freeq/job_97bee9f2-44cd-48e5-a6e4-8fb0994e8ae6_var_en_wikipedia_org_wiki_LiveScript"
+}, 
+{
+"introduced": "2014", 
+"name": "Swift", 
+"type": "/computer/programming_language", 
+"id": "/dataworld/freeq/job_abea7b16-a55a-4d95-8ac0-5100371bfbac_var_en_wikipedia_org_wiki_Swift_$0028Apple_programming_language$0029"
+}
+]
+}
