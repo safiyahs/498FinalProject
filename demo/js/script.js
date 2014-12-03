@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 		$.each(languageArr, function(key, val) {
 			var size = 14;
-			items.push('<span id="' + htmlFriendly(val.name) + '" style="font-size:' + size + 'px">' + val.name + '</span>');
+			items.push('<span id="' + htmlFriendly(val.name) + '" style="font-size:' + size + 'px">' + val.name + '<small> (' + val.introduced + ')</small></span>');
 			allTagList.push(val.name);
 		});
 
@@ -70,6 +70,7 @@ $(document).ready(function() {
 
 			$(".language-list span").on('click',function() {
 				var language = $(this).text();
+				language = language.substring(0, language.indexOf(' ('));
 				if (languageNameList.indexOf(language) == -1){
 					$(this).css("color",colorList[languageCount % colorList.length]);
 					generatelanguage(language);
@@ -130,6 +131,7 @@ $(document).ready(function() {
 
 					chart.yAxis
 						.axisLabel('Total Tagged Posts')
+						.tickFormat(d3.format("d"))
 						.axisLabelDistance(40);
 
 					chart.x2Axis.tickFormat(d3.format("d"));
