@@ -101,15 +101,21 @@ $(document).ready(function() {
 				languageNameList.push(LANGUAGE_NAME);
 
 				yearDict = [];
+				yearDict2 = []
 				data.forEach(function (d) {
 					if (d.tag === LANGUAGE_NAME){
 						yearDict.push({
 							x: parseInt(d.year),
-							y: parseInt(d.total)
+							y: parseFloat(d.total)
+						})
+						yearDict2.push({
+							x: parseInt(d.year),
+							y: parseFloat(d.unanswered)
 						})
 					}
 				});
-				languageData.push({"key": LANGUAGE_NAME, "values": yearDict});
+				languageData.push({"key": LANGUAGE_NAME, "values": yearDict, color: colorList[languageCount % colorList.length]});
+				languageData.push({"key": LANGUAGE_NAME + " (unanswered)", "values": yearDict2, isDashed: true, color: colorList[languageCount % colorList.length]});
 				languageCount++; // next color
 
 				updateChart();
@@ -118,23 +124,23 @@ $(document).ready(function() {
 			/********** Time Series Graph **********/
 			function initializeChart(){
 				nv.addGraph(function() {
-					chart = nv.models.lineWithFocusChart()
+					chart = nv.models.lineChart()
 						.margin({left: 50, right: 75, bottom: 50})
 						.useInteractiveGuideline(true)
 						.forceY(0)
-						.noData("Choose a language to see information.")
-						.color(colorList);
+						.noData("Choose a language to see information.");
+						// .color(colorList);
 
 					chart.xAxis
 						.axisLabel('Year')
 						.tickFormat(d3.format("d"));
 
 					chart.yAxis
-						.axisLabel('Total Tagged Posts')
-						.tickFormat(d3.format("d"))
+						.axisLabel('Stackoverflow Posts')
+						.tickFormat(d3.format(""))
 						.axisLabelDistance(40);
 
-					chart.x2Axis.tickFormat(d3.format("d"));
+					// chart.x2Axis.tickFormat(d3.format("d"));
 
 					d3.select("#chart")
 						.append("svg").attr("height","500")

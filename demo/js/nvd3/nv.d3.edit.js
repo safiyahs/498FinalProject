@@ -5274,7 +5274,7 @@ nv.models.line = function() {
 
 
       var linePaths = groups.selectAll('path.nv-line')
-          .data(function(d) { return [d.values] });
+          .data(function (d) { return d.isDashed ? [] : [d.values] });
       linePaths.enter().append('path')
           .attr('class', 'nv-line')
           .attr('d',
@@ -5295,7 +5295,28 @@ nv.models.line = function() {
               .y(function(d,i) { return nv.utils.NaNtoZero(y(getY(d,i))) })
           );
 
+      var dashedLinePaths = groups.selectAll('path.nv-line')
+          .data(function (d) { return d.isDashed ? [d.values] : [] });
 
+      dashedLinePaths.enter().append('path')
+          .attr('class', 'nv-line')
+          .attr('d',
+            d3.svg.line()
+              .interpolate(interpolate)
+              .defined(defined)
+              .x(function(d,i) { return nv.utils.NaNtoZero(x0(getX(d,i))) })
+              .y(function(d,i) { return nv.utils.NaNtoZero(y0(getY(d,i))) })
+          ).style("stroke-dasharray", ("3, 3"));
+
+        dashedLinePaths
+          .transition()
+          .attr('d',
+            d3.svg.line()
+              .interpolate(interpolate)
+              .defined(defined)
+              .x(function(d,i) { return nv.utils.NaNtoZero(x(getX(d,i))) })
+              .y(function(d,i) { return nv.utils.NaNtoZero(y(getY(d,i))) })
+          );
 
       //store old scales for use in transitions on update
       x0 = x.copy();
