@@ -31,7 +31,7 @@ with open("stackoverflow_output.csv", 'w') as f:
 
 					writer.writerow({'tag': tag, 'year': str(year), 'unanswered': str(questions_unanswered.total),'total': str(questions_all.total)})
 				except:
-					print "Count not fetch"
+					print "Could not fetch"
 
 				print tag + "-" + str(year) # just to make sure it's running
 

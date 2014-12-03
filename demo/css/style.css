@@ -1,0 +1,128 @@
+.btn-xl {
+  padding: 30px 28px;
+  font-size: 22px;
+}
+
+
+/* LEGEND COLORS */
+.r1 {
+	fill: #5bc0de !important;
+}
+
+.r2 {
+	fill: #008cba !important;
+}
+
+.r3 {
+	fill: #43ac6a !important;
+}
+
+.r4 {
+ fill: #e99002 !important; 
+}
+
+.r5 {
+	fill: #f04124 !important;
+}
+
+.r0 {
+	fill: #ededed !important;
+}
+
+/* BACKGROUND COLORS */
+.graph-label {
+	fill: #4A4A4A !important;
+}
+.dy_0 .graph-label, .dy_6 .graph-label {
+	fill: #999999 !important;
+}
+
+
+/********** TIME SERIES **********/
+
+.btn-padding {
+	/*padding-left: 5px;*/
+}
+
+.box-margin {
+	margin: 25px 0;
+}
+
+#language-box {
+	height: 400px;
+	overflow: auto;
+}
+
+.language-list {
+	word-wrap: break-word;
+	line-height: 2em;
+}
+
+.language-list span:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.nv-point {
+	stroke-opacity: 1.0 !important;
+}
+
+.twitter-typeahead {
+  display: table-cell !important;
+}
+/* TYPEAHEAD FIX*/
+/* https://github.com/bassjobsen/typeahead.js-bootstrap-css/blob/master/typeaheadjs.css */
+
+.tt-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.tt-suggestion {
+	cursor: pointer;
+}
+.tt-suggestion > p {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: nowrap;
+}
+.tt-suggestion > p:hover,
+.tt-suggestion > p:focus,
+.tt-suggestion.tt-cursor p {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #428bca;
+}
+
+
+/********** ABOUT PAGE **********/
+.dl-horizontal dt {
+  width: 180px !important;
+  overflow: visible !important;
+}
+
+.dl-horizontal dd {
+  margin-left: 200px !important;
+}
