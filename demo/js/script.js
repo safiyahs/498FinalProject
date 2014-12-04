@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 		$.each(languageArr, function(key, val) {
 			var size = 14;
-			items.push('<span id="' + htmlFriendly(val.name) + '" style="font-size:' + size + 'px">' + val.name + '<small> (' + val.introduced + ')</small></span>');
+			items.push('<span id="' + htmlFriendly(val.name) + '" data-date="' + val.introduced +'" data-link="' + val.id + '" style="font-size:' + size + 'px">' + val.name + '<small> (' + val.introduced + ')</small></span>');
 			allTagList.push(val.name);
 		});
 
@@ -28,51 +28,31 @@ $(document).ready(function() {
 			var colorList = ['#008cba', '#f04124', '#43ac6a', '#5bc0de', '#e99002', '#c4e3f3', '#d0e9c6', '#ebcccc', '#faf2cc'];
 			initializeChart();
 
-			/********** Auto complete **********/
-			// var sourceArr = [];
-			// for (var i=0; i<data.length; i++) {
-			// 	if (sourceArr.indexOf(data[i].name) == -1){
-			// 		 sourceArr.push(data[i].name);
-			// 	}
-			// }
-
-			// // https://gist.github.com/jharding/9458744#file-the-basics-js
-			// var substringMatcher = function(strs) {
-			// 	return function findMatches(q, cb) {
-			// 		var matches, substrRegex;
-			// 		matches = [];
-			// 		substrRegex = new RegExp(q, 'i');
-			// 		$.each(strs, function(i, str) {
-			// 			if (substrRegex.test(str)) {
-			// 				matches.push({ value: str });
-			// 			}
-			// 		});
-			// 		cb(matches);
-			// 	};
-			// };
-			// $('#language-name').typeahead({
-			// 	highlight: true,
-			// 	minLength: 1
-			// },{
-			// 	name: "language",
-			// 	source: substringMatcher(sourceArr)
-			// });
-
-			/********** Button Actions **********/		
-			// $("#submit-button").on('click',function() {
-			// 	var languageName = htmlFriendly($("#language-name").val());
-			// 	if ($("#"+ languageName).length) {
-			// 		$("#"+ languageName).css("color",colorList[languageCount % colorList.length]);
-			// 	}
-			// 	generatelanguage($("#language-name").val());
-			// 	$("#language-name").val("");
-			// });
-
 			$(".language-list span").on('click',function() {
 				var language = $(this).text();
+				// https://www.googleapis.com/freebase/v1/topic/
+				// https://developers.google.com/freebase/v1/topic-overview
+				var topic_id = $(this).data("link");
+				var introduced = $(this).data("date");
+
 				language = language.substring(0, language.indexOf(' ('));
 				if (languageNameList.indexOf(language) == -1){
 					$(this).css("color",colorList[languageCount % colorList.length]);
+
+					var service_url = 'https://www.googleapis.com/freebase/v1/topic';
+		      var params = {};
+		      $.getJSON(service_url + topic_id + '?callback=?', params, function(topic) {
+		      	var influenced_by = []
+
+		      	if (topic.property['/computer/programming_language/influenced_by'].values[0]!= null){
+			      	for (lang in topic.property['/computer/programming_language/influenced_by'].values[0]){
+		      		influenced_by.push(lang.text);
+			      	}
+		      	}
+
+		        $("#language-rows").append("<tr><td>" + language + "</td><td>" + introduced + "</td><td>"+ influenced_by.toString() + "</td><td>" + topic.property['/common/topic/description'].values[0].value + "</td></tr>");
+		      });
+
 					generatelanguage(language);
 				}
 			});
@@ -82,22 +62,13 @@ $(document).ready(function() {
 				languageNameList = [];
 				languageCount = 0;
 				$("#chart > *").remove();
+				$("#language-rows > *").remove();
 				initializeChart();
 				$(".language-list span").css("color","black");
 			});
 
-			$("#select-all-button").on('click',function() {
-				for (tag in allTagList){
-					$("#" + htmlFriendly(allTagList[tag])).css("color",colorList[languageCount % colorList.length]);
-					generatelanguage(allTagList[tag]);
-				}	
-			});
-
 			/********** Adding language to data **********/
 			function generatelanguage(LANGUAGE_NAME){  
-				// if (LANGUAGE_NAME ==="" || LANGUAGE_NAME.match(/^\s/) || languageNameList.indexOf(LANGUAGE_NAME) > -1) {
-				// 	return;
-				// }
 				languageNameList.push(LANGUAGE_NAME);
 
 				yearDict = [];
