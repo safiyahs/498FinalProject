@@ -44,13 +44,13 @@ $(document).ready(function() {
 		      $.getJSON(service_url + topic_id + '?callback=?', params, function(topic) {
 		      	var influenced_by = []
 
-		      	if (topic.property['/computer/programming_language/influenced_by'].values[0]!= null){
-			      	for (lang in topic.property['/computer/programming_language/influenced_by'].values[0]){
-		      		influenced_by.push(lang.text);
+		      	if (topic.property['/computer/programming_language/influenced_by'].values != null){
+			      	for (lang in topic.property['/computer/programming_language/influenced_by'].values){
+		      		influenced_by.push(topic.property['/computer/programming_language/influenced_by'].values[lang].text);
 			      	}
 		      	}
 
-		        $("#language-rows").append("<tr><td>" + language + "</td><td>" + introduced + "</td><td>"+ influenced_by.toString() + "</td><td>" + topic.property['/common/topic/description'].values[0].value + "</td></tr>");
+		        $("#language-rows").append("<tr><td>" + language + "</td><td>" + introduced + "</td><td>"+ influenced_by.join(", ") + "</td><td>" + topic.property['/common/topic/description'].values[0].value + "</td></tr>");
 		      });
 
 					generatelanguage(language);
@@ -98,7 +98,6 @@ $(document).ready(function() {
 					chart = nv.models.lineChart()
 						.margin({left: 50, right: 75, bottom: 50})
 						.useInteractiveGuideline(true)
-						.forceY(0)
 						.noData("Choose a language to see information.");
 						// .color(colorList);
 
