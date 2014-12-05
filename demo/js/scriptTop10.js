@@ -15,11 +15,14 @@ function initializeChart(data,colors){
 	nv.addGraph(function() {
 		var chart = nv.models.pieChart()
 	    .x(function(d) { if (d.tag == "Span") {return "HTML"} return d.tag })
-	    .y(function(d) { return d.total })
+	    .y(function(d) { return d.total})
 	    .width(350).height(350)
 	    .showLabels(true)
 	    .showLegend(false)
 	    .labelType('keyPercent')
+	    .tooltipContent(function(key, y, e, graph) {
+	    	return "<h3>" + key + "</h3><p>" + y + " total posts" + "</p>"; 
+	    })
 	    .color(colors)
 	    .valueFormat(d3.format('d'))
 			.noData("Choose a language to see information.");
