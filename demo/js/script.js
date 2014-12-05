@@ -1,4 +1,4 @@
-k$(document).ready(function() {
+$(document).ready(function() {
 	/********** language box **********/
 	$.getJSON('../languages.json', function(data2) {
 		var items = [];
