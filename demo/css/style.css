@@ -9,6 +9,10 @@
   margin: 4px !important;
 }
 
+.panel-title {
+  text-align: center;
+}
+
 /********** TIME SERIES **********/
 .box-margin {
 	margin: 25px 0;
