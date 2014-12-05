@@ -14,20 +14,22 @@ $(document).ready(function() {
 function initializeChart(data,colors){
 	nv.addGraph(function() {
 		var chart = nv.models.pieChart()
-	    .x(function(d) { return d.tag })
+	    .x(function(d) { if (d.tag == "Span") {return "HTML"} return d.tag })
 	    .y(function(d) { return d.total })
-	    .width(300).height(300)
+	    .width(350).height(350)
 	    .showLabels(true)
 	    .showLegend(false)
+	    .labelType('keyPercent')
 	    .color(colors)
 	    .valueFormat(d3.format('d'))
 			.noData("Choose a language to see information.");
+
 
 		d3.select("#chart" + data[0].year)
 			.append("svg").attr("height","400")
 			.datum(data)
 			.transition().duration(500)
-			.call(chart).style({ 'width': 300, 'height': 300 });
+			.call(chart).style({ 'width': 350, 'height': 350 });
 
 		nv.utils.windowResize(chart.update);
 		return chart;
