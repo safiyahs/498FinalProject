@@ -40,15 +40,19 @@ $(document).ready(function() {
 					var service_url = 'https://www.googleapis.com/freebase/v1/topic';
 		      var params = {};
 		      $.getJSON(service_url + topic_id + '?callback=?', params, function(topic) {
-		      	var influenced_by = []
-
+		      	var influenced_by = [];
+		      	var description = "";
+		      	if (topic.property['/common/topic/description'] && topic.property['/common/topic/description'].values[0]){
+		      		description = topic.property['/common/topic/description'].values[0].value;
+		      	}
+		      	
 		      	if (topic.property['/computer/programming_language/influenced_by'] != null && topic.property['/computer/programming_language/influenced_by'].values != null){
 			      	for (lang in topic.property['/computer/programming_language/influenced_by'].values){
 		      		influenced_by.push(topic.property['/computer/programming_language/influenced_by'].values[lang].text);
 			      	}
 		      	}
 
-		        $("#language-rows").append("<tr><td>" + language + "</td><td>" + introduced + "</td><td>"+ influenced_by.join(", ") + "</td><td>" + topic.property['/common/topic/description'].values[0].value + "</td></tr>");
+		        $("#language-rows").append("<tr><td>" + language + "</td><td>" + introduced + "</td><td>"+ influenced_by.join(", ") + "</td><td>" + description + "</td></tr>");
 		      });
 
 					generatelanguage(language);
