@@ -1,7 +1,5 @@
-$(document).ready(function() {
+k$(document).ready(function() {
 	/********** language box **********/
-	var apikey = "240ba9d6177f4e176ac938b73435bbe8";
-	var limit = "50"
 	$.getJSON('../languages.json', function(data2) {
 		var items = [];
 		var languageArr = data2.result;

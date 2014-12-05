@@ -1,3 +1,14 @@
+
+/********** PIE CHART **********/
+#charts > * {
+  width: 300px;
+  display: inline-block;
+}
+
+.panel {
+  margin: 4px !important;
+}
+
 /********** TIME SERIES **********/
 .box-margin {
 	margin: 25px 0;
