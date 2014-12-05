@@ -1,13 +1,17 @@
 $(document).ready(function() {
 	for (i = 2008; i < 2015; i++){
 		d3.csv("../" + i + "_top_lang.csv", function(error, data){
-			initializeChart(data);
+			var colors = []
+			for (d in data){
+				colors.push(stringToColour(htmlFriendly(data[d].tag)))
+			}
+			initializeChart(data,colors);
 		});
 	}
 });
 
 /********** Pie Graph **********/
-function initializeChart(data){
+function initializeChart(data,colors){
 	nv.addGraph(function() {
 		var chart = nv.models.pieChart()
 	    .x(function(d) { return d.tag })
@@ -15,6 +19,7 @@ function initializeChart(data){
 	    .width(300).height(300)
 	    .showLabels(true)
 	    .showLegend(false)
+	    .color(colors)
 	    .valueFormat(d3.format('d'))
 			.noData("Choose a language to see information.");
 
