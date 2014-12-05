@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	for (i = 2008; i < 2015; i++){
 		d3.csv("../" + i + "_top_lang.csv", function(error, data){
-			var colors = []
+			var colors = [];
 			for (d in data){
-				colors.push(stringToColour(htmlFriendly(data[d].tag)))
+				colors.push(stringToColour(data[d].tag))
 			}
 			initializeChart(data,colors);
 		});
@@ -34,22 +34,20 @@ function initializeChart(data,colors){
 		});
 	}	
 
-function htmlFriendly(text){
-	// removes spaces, #, *
-	if (text != null) {
-		return text.replace(/\s+/g, '-').replace(/#/g, '').replace(/\*/g, '');
-	}
-	return text;
-}
-
-// http://stackoverflow.com/questions/3426404/create-a-hexadecimal-colour-based-on-a-string-with-javascript
+// http://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript-jquery
 function stringToColour(str) {
-  // str to hash
+  var scale = d3.scale.category20b().domain(d3.range(0,20));
+  var scale2 = d3.scale.category20().domain(d3.range(0,20));
   if (str != null){
-	  for (var i = 0, hash = 0; i < str.length; hash = str.charCodeAt(i++) + ((hash << 5) - hash));
-	  for (var i = 0, colour = "#"; i < 3; colour += ("00" + ((hash >> i++ * 8) & 0xFF).toString(16)).slice(-2));
+  	var semihash = str.split("").reduce(function(a,b){a=((a<<2)-a)+b.charCodeAt(0);return a&a},0);
+	  var color;
+	  if (semihash > 1000) {
+	  	color = scale2(semihash % 19);
+	  } else {
+	  	color = scale(semihash % 15);
+	  }
 
-	  return colour;
+	  return color;
   }
 }
 
