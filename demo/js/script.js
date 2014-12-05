@@ -42,7 +42,7 @@ $(document).ready(function() {
 		      $.getJSON(service_url + topic_id + '?callback=?', params, function(topic) {
 		      	var influenced_by = []
 
-		      	if (topic.property['/computer/programming_language/influenced_by'].values != null){
+		      	if (topic.property['/computer/programming_language/influenced_by'] != null && topic.property['/computer/programming_language/influenced_by'].values != null){
 			      	for (lang in topic.property['/computer/programming_language/influenced_by'].values){
 		      		influenced_by.push(topic.property['/computer/programming_language/influenced_by'].values[lang].text);
 			      	}
